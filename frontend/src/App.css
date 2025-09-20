@@ -166,16 +166,44 @@ html {
 }
 
 /* Animated border running animation */
-@keyframes border-run {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+@keyframes border-top {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes border-right {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes border-bottom {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes border-left {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
+}
+
+.animate-border-top {
+  animation: border-top 2s linear infinite;
+  animation-delay: 0s;
+}
+
+.animate-border-right {
+  animation: border-right 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-border-bottom {
+  animation: border-bottom 2s linear infinite;
+  animation-delay: 1s;
+}
+
+.animate-border-left {
+  animation: border-left 2s linear infinite;
+  animation-delay: 1.5s;
 }
 
 .animate-border-run {
