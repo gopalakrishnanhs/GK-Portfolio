@@ -155,7 +155,7 @@ const HomePage = () => {
               Discover My Journey
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {ctaTiles.map((tile, index) => {
                 const IconComponent = tile.icon;
                 return (
