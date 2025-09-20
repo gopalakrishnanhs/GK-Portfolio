@@ -343,6 +343,54 @@ const DetailsPage = () => {
               {renderContent()}
             </motion.div>
           </AnimatePresence>
+
+          {/* Creative Footer for Details Pages */}
+          <motion.footer 
+            className="relative mt-20 bg-gradient-to-br from-gray-900/90 via-slate-900/90 to-gray-900/90 backdrop-blur-sm border-t border-white/10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <div className="container mx-auto px-6 py-12">
+              <div className="max-w-3xl mx-auto text-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2, duration: 0.6 }}
+                >
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Explore More Sections
+                  </h3>
+                  <div className="flex flex-wrap justify-center gap-4 mb-8">
+                    {Object.entries(sectionConfig).map(([key, config]) => {
+                      const IconComponent = config.icon;
+                      if (key === section) return null; // Don't show current section
+                      return (
+                        <Button
+                          key={key}
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => navigate(`/details/${key}`)}
+                          className="text-gray-400 hover:text-cyan-400 hover:bg-cyan-400/10 border border-white/10 hover:border-cyan-400/30 transition-all duration-300"
+                        >
+                          <IconComponent className="w-4 h-4 mr-2" />
+                          {config.title}
+                        </Button>
+                      );
+                    })}
+                  </div>
+                  <Button
+                    variant="outline"
+                    onClick={() => navigate('/')}
+                    className="border-cyan-400/30 text-cyan-400 hover:bg-cyan-400/10 hover:border-cyan-400/50 transition-all duration-300"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Back to Home
+                  </Button>
+                </motion.div>
+              </div>
+            </div>
+          </motion.footer>
         </div>
       </div>
     </div>
