@@ -153,7 +153,7 @@ const HomePage = () => {
               Discover My Journey
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {ctaTiles.map((tile, index) => {
                 const IconComponent = tile.icon;
                 return (
@@ -162,30 +162,33 @@ const HomePage = () => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.4 + index * 0.2, duration: 0.6 }}
+                    className="h-full"
                   >
                     <Card 
-                      className={`relative group cursor-pointer overflow-hidden bg-gradient-to-br ${tile.gradient} backdrop-blur-sm border border-white/10 hover:border-cyan-400/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/10`}
+                      className={`relative group cursor-pointer overflow-hidden bg-gradient-to-br ${tile.gradient} backdrop-blur-sm border border-white/10 hover:border-cyan-400/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/10 h-full flex flex-col`}
                       onClick={() => handleTileClick(tile.id)}
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
-                      <div className="relative p-8">
-                        <div className="flex items-start justify-between mb-6">
+                      <div className="relative p-6 flex-1 flex flex-col">
+                        <div className="flex items-start justify-between mb-4">
                           <div className="p-3 bg-cyan-400/10 rounded-lg group-hover:bg-cyan-400/20 transition-colors duration-300">
-                            <IconComponent className="w-8 h-8 text-cyan-400" />
+                            <IconComponent className="w-6 h-6 text-cyan-400" />
                           </div>
-                          <ChevronRight className="w-6 h-6 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
+                          <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
                         </div>
                         
-                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-100 transition-colors duration-300">
-                          {tile.title}
-                        </h3>
+                        <div className="flex-1 flex flex-col">
+                          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-100 transition-colors duration-300">
+                            {tile.title}
+                          </h3>
+                          
+                          <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300 flex-1">
+                            {tile.description}
+                          </p>
+                        </div>
                         
-                        <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                          {tile.description}
-                        </p>
-                        
-                        <div className="mt-6 w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 group-hover:w-20 transition-all duration-500"></div>
+                        <div className="mt-4 w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 group-hover:w-12 transition-all duration-500"></div>
                       </div>
                     </Card>
                   </motion.div>
