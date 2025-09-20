@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { 
   Code2, 
   Briefcase, 
@@ -16,6 +17,11 @@ import { Card } from "./ui/card";
 
 const HomePage = () => {
   const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
 
   const ctaTiles = [
     {

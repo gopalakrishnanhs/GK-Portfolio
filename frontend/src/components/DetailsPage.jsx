@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
@@ -20,6 +20,11 @@ import { mockData } from "../data/mock";
 const DetailsPage = () => {
   const { section } = useParams();
   const navigate = useNavigate();
+
+  // Scroll to top when component mounts or section changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [section]);
 
   const sectionConfig = {
     skills: {
