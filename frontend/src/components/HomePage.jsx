@@ -18,6 +18,11 @@ import { Card } from "./ui/card";
 const HomePage = () => {
   const navigate = useNavigate();
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   const ctaTiles = [
     {
       id: "skills",
