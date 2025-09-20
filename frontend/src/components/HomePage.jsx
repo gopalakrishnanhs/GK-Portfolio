@@ -170,10 +170,14 @@ const HomePage = () => {
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
-                      {/* Animated border line running around the perimeter */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 rounded-lg animate-border-run bg-clip-border"></div>
-                        <div className="absolute inset-0.5 bg-gradient-to-br from-gray-900/95 via-slate-900/95 to-gray-900/95 rounded-lg"></div>
+                      {/* Animated border running around the tile */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <div className="absolute inset-0 rounded-lg animate-border-glow">
+                          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-border-top"></div>
+                          <div className="absolute top-0 right-0 w-0.5 h-full bg-gradient-to-b from-transparent via-cyan-400 to-transparent animate-border-right"></div>
+                          <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-cyan-400 to-transparent animate-border-bottom"></div>
+                          <div className="absolute bottom-0 left-0 w-0.5 h-full bg-gradient-to-t from-transparent via-cyan-400 to-transparent animate-border-left"></div>
+                        </div>
                       </div>
                       
                       <div className="relative p-6 flex-1 flex flex-col z-10">
