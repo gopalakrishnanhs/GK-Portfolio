@@ -170,16 +170,10 @@ const HomePage = () => {
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
-                      {/* Animated line that runs across on hover */}
-                      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                        {/* Main scanning line */}
-                        <div className="absolute top-1/2 -left-full w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-300 to-transparent transform -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 ease-out"></div>
-                        
-                        {/* Secondary glow line with delay */}
-                        <div className="absolute top-1/2 -left-full w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent transform -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1200 ease-out delay-100"></div>
-                        
-                        {/* Subtle top accent line */}
-                        <div className="absolute top-0 -left-full w-full h-px bg-gradient-to-r from-transparent via-cyan-200/80 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-800 ease-out delay-200"></div>
+                      {/* Animated border line running around the perimeter */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400 rounded-lg animate-border-run bg-clip-border"></div>
+                        <div className="absolute inset-0.5 bg-gradient-to-br from-gray-900/95 via-slate-900/95 to-gray-900/95 rounded-lg"></div>
                       </div>
                       
                       <div className="relative p-6 flex-1 flex flex-col z-10">
