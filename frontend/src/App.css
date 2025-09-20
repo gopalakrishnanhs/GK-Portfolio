@@ -164,3 +164,21 @@ html {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(4, 217, 255, 0.1);
 }
+
+/* Animated border running animation */
+@keyframes border-run {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-border-run {
+  background-size: 200% 200%;
+  animation: border-run 2s ease-in-out infinite;
+}
