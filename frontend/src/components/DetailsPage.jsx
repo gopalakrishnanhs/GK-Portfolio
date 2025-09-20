@@ -89,6 +89,18 @@ const DetailsPage = () => {
 
   const renderExperience = () => (
     <div className="space-y-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
+      >
+        <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          A comprehensive overview of the professional experiences and achievements I've gained throughout my career 
+          in mobile development frameworks, working with diverse teams and delivering impactful solutions across various industries.
+        </p>
+      </motion.div>
+      
       {mockData.experience.map((job, index) => (
         <motion.div
           key={index}
