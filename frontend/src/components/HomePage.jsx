@@ -110,7 +110,7 @@ const HomePage = () => {
             </motion.p>
 
             <motion.div 
-              className="flex flex-wrap justify-center gap-4 mb-12"
+              className="flex flex-wrap justify-center gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
@@ -133,8 +133,6 @@ const HomePage = () => {
                 <span className="text-gray-300">LinkedIn Profile</span>
               </a>
             </motion.div>
-
-
           </div>
         </motion.section>
 
