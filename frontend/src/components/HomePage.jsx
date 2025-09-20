@@ -138,7 +138,7 @@ const HomePage = () => {
 
         {/* CTA Tiles Section */}
         <motion.section 
-          className="container mx-auto px-6 py-16"
+          className="container mx-auto px-6 pt-6 pb-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
