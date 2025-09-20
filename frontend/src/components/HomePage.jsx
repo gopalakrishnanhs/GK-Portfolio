@@ -170,7 +170,12 @@ const HomePage = () => {
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       
-                      <div className="relative p-6 flex-1 flex flex-col">
+                      {/* Animated line that runs across on hover */}
+                      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                        <div className="absolute top-1/2 -left-full w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-300 to-transparent transform -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 ease-out"></div>
+                      </div>
+                      
+                      <div className="relative p-6 flex-1 flex flex-col z-10">
                         <div className="flex items-start justify-between mb-4">
                           <div className="p-3 bg-cyan-400/10 rounded-lg group-hover:bg-cyan-400/20 transition-colors duration-300">
                             <IconComponent className="w-6 h-6 text-cyan-400" />
