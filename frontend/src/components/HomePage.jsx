@@ -172,7 +172,14 @@ const HomePage = () => {
                       
                       {/* Animated line that runs across on hover */}
                       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                        {/* Main scanning line */}
                         <div className="absolute top-1/2 -left-full w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-300 to-transparent transform -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 ease-out"></div>
+                        
+                        {/* Secondary glow line with delay */}
+                        <div className="absolute top-1/2 -left-full w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent transform -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1200 ease-out delay-100"></div>
+                        
+                        {/* Subtle top accent line */}
+                        <div className="absolute top-0 -left-full w-full h-px bg-gradient-to-r from-transparent via-cyan-200/80 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-800 ease-out delay-200"></div>
                       </div>
                       
                       <div className="relative p-6 flex-1 flex flex-col z-10">
