@@ -49,6 +49,18 @@ const DetailsPage = () => {
 
   const renderSkills = () => (
     <div className="space-y-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
+      >
+        <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          Here are some of my core skills and expertise in technologies that I've used to build multiple scalable, 
+          cross-platform mobile applications throughout my 9+ years in the industry.
+        </p>
+      </motion.div>
+      
       {mockData.skills.map((category, index) => (
         <motion.div
           key={category.category}
