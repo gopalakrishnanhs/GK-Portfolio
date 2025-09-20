@@ -134,20 +134,7 @@ const HomePage = () => {
               </a>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-            >
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0 px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
-                onClick={() => navigate('/details/skills')}
-              >
-                Explore My Work
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
-            </motion.div>
+
           </div>
         </motion.section>
 
