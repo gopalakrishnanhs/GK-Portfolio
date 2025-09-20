@@ -197,6 +197,137 @@ const HomePage = () => {
             </div>
           </div>
         </motion.section>
+
+        {/* Creative Footer */}
+        <motion.footer 
+          className="relative mt-20 bg-gradient-to-br from-gray-900/90 via-slate-900/90 to-gray-900/90 backdrop-blur-sm border-t border-white/10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 0.8 }}
+        >
+          {/* Floating particles for footer */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-cyan-400/20 rounded-full"
+                initial={{
+                  x: Math.random() * window.innerWidth,
+                  y: Math.random() * 200,
+                }}
+                animate={{
+                  x: Math.random() * window.innerWidth,
+                  y: Math.random() * 200,
+                }}
+                transition={{
+                  duration: Math.random() * 15 + 10,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="relative z-10 container mx-auto px-6 py-16">
+            <div className="max-w-4xl mx-auto text-center">
+              {/* Call to Action */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2.2, duration: 0.6 }}
+                className="mb-12"
+              >
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Ready to build something{" "}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    amazing
+                  </span>
+                  ?
+                </h3>
+                <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                  Let's collaborate and turn your mobile app ideas into reality
+                </p>
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-0 px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
+                  onClick={() => navigate('/details/contact')}
+                >
+                  Let's Connect
+                  <Mail className="ml-2 w-5 h-5" />
+                </Button>
+              </motion.div>
+
+              {/* Skills Highlight */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2.4, duration: 0.6 }}
+                className="mb-12"
+              >
+                <div className="flex flex-wrap justify-center gap-3">
+                  {["React Native", "React JS", "Mobile Development", "Cross-Platform", "Firebase", "Security"].map((skill, index) => (
+                    <motion.div
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 2.6 + index * 0.1, duration: 0.4 }}
+                      className="px-4 py-2 bg-cyan-400/10 border border-cyan-400/20 rounded-full text-cyan-300 text-sm font-medium hover:bg-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300"
+                    >
+                      {skill}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Bottom Section */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.8, duration: 0.6 }}
+                className="border-t border-white/10 pt-8"
+              >
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+                  <div className="flex items-center gap-6">
+                    <p className="text-gray-400 text-sm">
+                      © 2024 Gopala Krishnan H. Crafted with passion.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
+                    <a 
+                      href="mailto:gopalakrishnanhs@gmail.com"
+                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/in/gopala-krishnan-h-b21aa8a1/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                    <div className="w-px h-6 bg-gray-600"></div>
+                    <motion.div
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        opacity: [0.7, 1, 0.7]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="w-2 h-2 bg-cyan-400 rounded-full"
+                    ></motion.div>
+                    <span className="text-gray-400 text-sm">Available for projects</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.footer>
       </div>
     </div>
   );
