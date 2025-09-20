@@ -21,6 +21,11 @@ const DetailsPage = () => {
   const { section } = useParams();
   const navigate = useNavigate();
 
+  // Scroll to top when component mounts or section changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [section]);
+
   const sectionConfig = {
     skills: {
       title: "Technical Skills",
